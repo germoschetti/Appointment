@@ -1,0 +1,32 @@
+<div class="card bg-light">
+    <div class="card-body">
+        <h3 class="card-title">Crear Cita</h3>
+   
+            <div class="alert alert-danger text-center p-2" *ngIf='validForm == false' role="alert">
+               Todos los campos son obligatorios
+            </div>
+      
+        <form class="form-group" #citasForm>
+            <div class="mb-3">
+                <label for="name">Nombre</label>
+                <input class="form-control" [(ngModel)]="name" name="name" type="text" id="name" placeholder="Ingrese su nombre...">
+            </div>
+            <div class="mb-3">
+                <label for="date">Fecha</label>
+                <input class="form-control" [(ngModel)]="date" name="date" type="date" id="date">
+            </div>
+            <div class="mb-3">
+                <label for="time">Hora</label>
+                <input class="form-control" [(ngModel)]="time" name="time" type="time" id="time">
+            </div>
+            <div class="mb-4">
+                <label for="symptom">Sintomas</label>
+                <textarea class="form-control" [(ngModel)]="symptom" name="symptom" id="symptom" rows="5" placeholder="Ingrese los sintomas..."></textarea>
+            </div>
+            <div class="mb-3">
+                <input class="form-control btn btn-info" id="btn" type="submit" (click)='addCitas(citasForm)' value="Enviar">
+            </div>
+        </form>
+
+    </div>
+</div>

@@ -1,0 +1,18 @@
+
+
+<div class="card bg-light" *ngIf='citas.length == 0'>
+    <div class="card-body">
+        <h5 class="card-title">No hay citas para mostrar</h5>
+    </div>
+</div>
+
+<div class="card bg-light overflow-auto div-scroll mb-2" style="max-height: 590px;"  >
+    <div class="card-body div-class" *ngFor='let cita of citas; let i = index'>
+        <p class="card-text"><span>Nombre: </span>{{cita.name}}</p>
+        <p class="card-text"><span>Fecha: </span>{{cita.date}}</p>
+        <p class="card-text"><span>Hora: </span>{{cita.time}}</p>
+        <p class="card-text"><span>Sintomas: </span>{{cita.symptom}}</p>
+        <button class="btn btn-danger w-100" (click)='delete(i)'>Eliminar</button>
+    </div>
+
+</div>
